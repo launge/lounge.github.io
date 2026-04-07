@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Моя первая страница</title>
+    <style>
+        /* Стили для всей страницы */
+        body {
+            background-color: #121212; /* Глубокий черный фон */
+            color: white;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+.contact-form input,
+.contact-form textarea {
+	width: 100%;
+	box-sizing: border-box;
+	margin-bottom: 15px;
+
+}
+.nav-menu {
+	margin-bottom: 30px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #444;
+}
+
+.nav-menu协议 a {
+	text-decoration: none;
+	color: #ffcc00;
+	margin: 0 15px;
+	font-weight: bold;
+}
+
+.nav-menu a:hover{
+     text-decoration: underline;
+}
+
+
+        /* Наша главная "коробка" */
+        .container {
+	<nav class="nav-menu">
+	     <a href="index.html">Главная</a>
+	     <a href="project.html">Мои проекты</a>
+	</nav>		
+            max-width: 500px;         /* Ограничиваем ширину */
+            margin: 50px auto;        /* 50px отступ сверху, центровка по бокам */
+            background-color: #1e1e1e; /* Цвет карточки чуть светлее фона */
+            padding: 40px;            /* Отступы внутри карточки */
+            border-radius: 30px;      /* Сильно закругляем углы */
+            text-align: center;       /* Весь текст в центре */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7); /* Красивая тень */
+        }
+
+        h1 {
+            color: #ffcc00;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            text-align: left;         /* Список внутри центральной карточки оставим слева */
+            display: inline-block;    /* Чтобы список сам был по центру */
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: #ffcc00;
+        }
+
+        button {
+            background-color: #ff4444;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 20px 0;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
+        }
+
+        img {
+            width: 100%;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+
+@media (max-width: 600px) {
+	.container{
+	    width: 90%;
+            margin: 20px auto;
+            padding: 15px;
+}
+ h1{
+    font-size: 24px;
+   }
+}			
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section class="projects">
+    <h2 style="text-aligh: center; margin-bottom: 30px;">Мои проекты и навыки</h2>
+
+    <div class="projects-grid">
+
+        <a href="cpp.html" class="project-card" style="text-decoration: none; color: inherit; ">
+            <div class="project-info">
+                <h3>C++</h3>
+                <p>Разработка на C++ </p>
+                <span class="tag">C++</span>
+            </div>
+        </a>
+
+        <a href="web.html" class="project-card" style="text-decoration: none; color: inherit;">
+            <div class="project-info">
+                <h3>Личный сайт-портфолио</h3>
+                <p>Создание адаптивного интерфейса с использованием HTML, CSS и JavaScript.</p>
+                <span class="tag">Frontend</span> <span class="tag">JS</span>
+            </div>
+        </a>
+         
+         <a href="linux.html" class ="project-card" style="text-decoration: none; color: inherit;">
+            <div class ="project-info">
+                <h3>Linux & WSL 2</h3>
+                <p>Настройка окружения в Kali и Arch Linux для работы с кодом и тестами.</p>
+                <span class="tag">Linux</span> <span class="tag">Security</span>
+            </div>
+        </a>
+        
+    </div>
+</section>    
+    <div class="container">
+<nav style="margin-bottom: 30px; border-bottom: 1px solid #444; padding-bottom: 10px;">
+    <a href="index.html" style="color: #ffcc00; text-decoration: none; margin-right: 20px;">Главная</a>
+    <a href="project.html" style="color: #ffcc00; text-decoration: none;">Проекты</a>
+</nav>
+        <h1>Привет, я Алихан</h1>
+        <p>Я хочу научиться делать сайты.</p>
+
+        <h3>Мой список инструментов</h3>
+        <ul>
+            <li>Ноутбук</li>
+            <li><b>Интернет</b></li>
+            <li>Желание учиться</li>
+        </ul>
+
+        <br> <a href="https://www.youtube.com/">YouTube</a>
+        <a href="https://www.google.com/"><b>Google</b></a>
+
+        <br>
+
+        <button onclick="changeColor()">Связаться со мной</button>
+
+<div class="contact-form">
+     <hr style="border: 0.5px solid #444; margin: 20px 0;"> <h3>Оставить заявку</h3>
+     <input type="text" id="userName" placeholder="Твое имя">
+     <input type="tel" id="userMessage" placeholder="Номер телефона">
+     <br>
+     <button onclick="sendFeedback()" style="background-color: #27ae60">Отправить данные</button>	
+     <p id="responseMessage" style="color: #27ae60; font-weight: bold; margin-top: 15px; text-aligh: center;"></p>
+</div>	
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMGD2ArKCumCw979hpvK9op2fW6tVoB6YFcg&s" alt="Нью-Йорк">
+    </div>
+<script>
+	function sendFeedback(){
+	
+	let name = document.getElementById("userName").value;
+	let message = document.getElementById("userMessage").value;
+
+	if (name === " " || message === ""){
+	    alert("Пожалуйста, заполни все поля!");
+
+	document.getElementById("userName").value = "";
+	document.getElementById("userMessage").value = "";
+}
+}
+
+
+	
+
+	function changeColor() {
+		document.body.style.backgroundColor = " rand ";
+		alert("Телефон: 87077703400. A я еще покрасил фон!");
+	}
+</script>
+<script>
+function sendFeedback() {
+    let name = document.getElementById('userName').value;
+    
+    if (name.trim() === "") {
+        alert("Эй, введи сначала имя!");
+    } else {
+        alert("Привет, " + name + "! Твои данные успешно отправлены.");
+        console.log("Форма отправлена пользователем: " + name);
+    }
+}
+</script>
+<script>
+    function sendFeedback(){
+    let name = document.getElementById('userName').value;
+    let messageSlot = document.getElementById('responseMessage');
+
+    if (name.trim() === "") { 
+        messageSlot.textContent = "Ошибка: введите имя!";
+        messageSlot.style.color = "#e74c3c";
+    } else {
+    
+        messageSlot.textContent = "Спасибо," + name + "! Твои данные приняты.";
+        messageSlot.style.color = "#27ae60";
+        
+        document.getElementById('userName').value = "";
+    }
+}
+</script>
+<footer style="margin-top: 50px; padding: 30px; border-top: 1px solid #1a1a1a; text-align: center; color: #555;">
+    <p style="margin-bottom: 10px;">&copy; 2026 Алихан Абдуллаев</p>
+    <p style="font-size: 0.9em;">Студент кафедры информационный безопасности,МУИТ</p>
+</footer>
+</body>
+</html>

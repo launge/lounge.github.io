@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Linux Lab | Alikhan </title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .terminal-window {
+            background: #000;
+            border: 1px solid #27ae60;
+            border-radius: 10px;
+            padding: 20 px;
+            font-family: 'Courier New' , monospace;
+            box-shadow: 0 0 20px rgba(39, 174, 96, 0.2);
+        }
+        .command { color: #27ae60 }
+        .output { color: #aaa; margin-bottom: 15px ; }
+    </style>
+</head>
+<body style="background: #0b0b0b; color: #eee; padding: 40px;">
+    <a href="index.html" style="color: #27ae60; text-decoration: none;">← cd ..</a>
+
+    <h1 style="margin-top: 30px;">Security & OS Environment</h1>
+
+    <div class="terminal-window">
+        <div classs="command">alikhan@portfolio:~$ neofetch</div>
+        <div class="output">
+            • Настройка сетевых интерфейсов в Linux<br>
+            • Работа с инструментами анализа трафика<br>
+            • Кастомизация Windows Terminal и WSL
+        </div>
+    </div>
+<script>
+    const text = "Иницилизация системы... Доступ разрешен. Запуск инструментов Kali Linux...";
+    let i = 0;
+    function typeWriter() {
+        if(i < text.length) {
+            document.querySelector('.output').innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 50);
+        }
+    }
+    window.onlad = typeWriter;
+    </script>
+</body>
+</html>
