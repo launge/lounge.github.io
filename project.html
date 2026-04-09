@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <title>Проекты | Алихан</title>
     <style>
+        tr:hover {
+            background-color: #1e1e1e !important;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #161616;
+        }
+        
         body {
             background-color: #0f0f0f; /* Глубокий черный */
             color: white;
@@ -123,7 +133,7 @@
                          <td style="padding: 15px;">Лабораторная работа №1</td>
                          <td style="padding: 15px; color: #3498db;">DOCX</td>
                          <td style="padding: 15px;">
-                             <a href="assets/lab_work_1.docx" style="color: #27ae60; text-decoration: none; font-weight: bold;" download>⬇ Скачать</a>
+                             <a href="assets/lab_work_1.docx" onclick="notifyDownload('Лаба №1') style="color: #27ae60; text-decoration: none; font-weight: bold;" download>⬇ Скачать</a>
                          </td>
                      </tr>
 
@@ -163,6 +173,11 @@
     Написать в WhatsApp
 </a>   
         </div>
+<script>
+    function notifyDownload(labName) {
+        alert("Файл " + labName + " начинает скачиваться. Удачи!");
+    }
+</script>    
 
 </body>
 </html>
