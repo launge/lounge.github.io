@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Проекты | Алихан</title>
     <style>
@@ -79,6 +80,24 @@
             margin: 0 10px;
             text-decoration: underline;
         }
+
+        @media screen and (max-width: 600px) {
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            td, th {
+                padding: 10 px !important;
+                font-size: 14px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+            
     </style>
 </head>
 <body>
