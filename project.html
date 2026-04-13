@@ -5,99 +5,49 @@
     <meta charset="UTF-8">
     <title>Проекты | Алихан</title>
     <style>
-        tr:hover {
-            background-color: #1e1e1e !important;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-        
-        tr:nth-child(even) {
-            background-color: #161616;
-        }
-        
-        body {
-            background-color: #0f0f0f; /* Глубокий черный */
-            color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
+      
+    /* Общие настройки для всего сайта */
+    body {
+        background-color: #000; /* Черный фон */
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0 20px;       /* ТЕ САМЫЕ ОТСТУПЫ ПО БОКАМ */
+        line-height: 1.6;      /* Расстояние между строками */
+        display: flex;
+        flex-direction: column;
+        align-items: center;   /* Центрируем контент */
+    }
 
-        /* Навигация как на скрине */
-        nav {
-            padding: 20px;
-            background: #161616;
-        }
-        nav a {
-            color: #ffcc00; /* Желтый, как у тебя */
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+    /* Ограничиваем ширину контента, чтобы на компе не расползалось */
+    .container {
+        max-width: 800px;
+        width: 100%;
+    }
 
-        h1 { color: #ffcc00; margin-top: 50px; font-size: 2.5em; }
-        
-        .content { padding: 40px; }
+    /* Твоя таблица (улучшенная) */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
 
-        /* Красивый список инструментов */
-        ul {
-            list-style: none;
-            padding: 0;
-            display: inline-block;
-            text-align: left;
-        }
-        ul li {
-            padding: 10px 0;
-            font-size: 1.1em;
-        }
-        ul li::before {
-            content: "▹ ";
-            color: #27ae60; /* Зеленый акцент */
-        }
+    /* Эффект при наведении на строку */
+    tr:hover {
+        background-color: #1a1a1a !important;
+        transition: 0.3s;
+    }
 
-        /* Твоя красная кнопка, но круче */
-        .btn-contact {
-            background-color: #ff4d4d;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 30px;
-            font-weight: bold;
-            transition: 0.3s;
-            border: none;
+    /* Адаптивность для мобилок */
+    @media screen and (max-width: 600px) {
+        table {
+            display: block;
+            overflow-x: auto; /* Скролл таблицы вбок */
         }
-        .btn-contact:hover {
-            transform: scale(1.05);
-            background-color: #ff3333;
-            box-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
-        }
+        h1 { font-size: 24px; }
+        padding: 0 15px;
+    }
 
-        .links a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: underline;
-        }
-
-        @media screen and (max-width: 600px) {
-            table {
-                display: block;
-                overflow-x: auto;
-                white-space: nowrap;
-            }
-
-            td, th {
-                padding: 10 px !important;
-                font-size: 14px;
-            }
-
-            h2 {
-                font-size: 1.5em;
-            }
-        }
-            
     </style>
 </head>
 <body>
