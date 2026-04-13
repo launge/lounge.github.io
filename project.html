@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Проекты | Алихан</title>
    <style>
+    /* Базовые настройки */
     body {
         background-color: #000;
         color: white;
@@ -13,60 +14,81 @@
         padding: 0;
         display: flex;
         flex-direction: column;
-        align-items: center; /* Центрирует всё по горизонтали */
+        align-items: center; /* Центрирует всё содержимое по горизонтали */
     }
 
-    /* Основной контейнер, который держит весь контент */
+    /* Главный контейнер, который расширяется на компе */
     .main-container {
-        max-width: 900px; /* Ширина сайта на компе */
         width: 100%;
-        padding: 20px;    /* Отступы, чтобы на телефоне не липло к краям */
+        max-width: 1100px; /* Увеличили ширину для компьютера */
+        padding: 40px 20px;
         box-sizing: border-box;
     }
 
-    /* Навигация сверху */
+    /* Навигация */
     nav {
-        margin-bottom: 40px;
+        width: 100%;
         text-align: center;
+        margin-bottom: 30px;
     }
 
     nav a {
         color: #27ae60;
         text-decoration: none;
-        margin: 0 10px;
+        margin: 0 15px;
         font-weight: bold;
+        font-size: 1.1em;
     }
 
-    /* Карточки услуг в ряд на компе, в колонку на телефоне */
+    /* Сетка услуг: на компе в ряд, на телефоне в колонку */
     .services-grid {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Авто-распределение */
         gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
+        margin-top: 30px;
     }
 
     .service-card {
-        flex: 1;
-        min-width: 280px;
         border: 1px solid #27ae60;
-        padding: 20px;
+        padding: 25px;
         border-radius: 12px;
         background: #0a0a0a;
+        transition: 0.3s;
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px); /* Легкий эффект при наведении */
+        box-shadow: 0 5px 15px rgba(39, 174, 96, 0.2);
     }
 
     /* Таблица */
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto; /* Скролл для мобилок */
+        margin-top: 20px;
+    }
+
     table {
         width: 100%;
         border-collapse: collapse;
-        margin-top: 20px;
+        background: #0a0a0a;
+        border-radius: 8px;
+        overflow: hidden;
     }
-    
-    th, td { padding: 15px; text-align: left; }
 
-    /* Мобильная адаптация */
-    @media screen and (max-width: 600px) {
-        .main-container { padding: 15px; }
-        table { display: block; overflow-x: auto; }
+    th, td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #222;
+    }
+
+    th { background-color: #1a1a1a; color: #27ae60; }
+
+    /* Адаптация под телефон */
+    @media screen and (max-width: 768px) {
+        .main-container { padding: 20px 15px; }
+        h1 { font-size: 1.8em; text-align: center; }
+        .services-grid { grid-template-columns: 1fr; } /* На телефоне строго в одну колонку */
     }
 </style>
 </head>
