@@ -4,51 +4,71 @@
     <meta name ="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Проекты | Алихан</title>
-    <style>
-      
-    /* Общие настройки для всего сайта */
+   <style>
     body {
-        background-color: #000; /* Черный фон */
+        background-color: #000;
         color: white;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Segoe UI', Arial, sans-serif;
         margin: 0;
-        padding: 0 20px;       /* ТЕ САМЫЕ ОТСТУПЫ ПО БОКАМ */
-        line-height: 1.6;      /* Расстояние между строками */
+        padding: 0;
         display: flex;
         flex-direction: column;
-        align-items: center;   /* Центрируем контент */
+        align-items: center; /* Центрирует всё по горизонтали */
     }
 
-    /* Ограничиваем ширину контента, чтобы на компе не расползалось */
-    .container {
-        max-width: 800px;
+    /* Основной контейнер, который держит весь контент */
+    .main-container {
+        max-width: 900px; /* Ширина сайта на компе */
         width: 100%;
+        padding: 20px;    /* Отступы, чтобы на телефоне не липло к краям */
+        box-sizing: border-box;
     }
 
-    /* Твоя таблица (улучшенная) */
+    /* Навигация сверху */
+    nav {
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    nav a {
+        color: #27ae60;
+        text-decoration: none;
+        margin: 0 10px;
+        font-weight: bold;
+    }
+
+    /* Карточки услуг в ряд на компе, в колонку на телефоне */
+    .services-grid {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .service-card {
+        flex: 1;
+        min-width: 280px;
+        border: 1px solid #27ae60;
+        padding: 20px;
+        border-radius: 12px;
+        background: #0a0a0a;
+    }
+
+    /* Таблица */
     table {
         width: 100%;
         border-collapse: collapse;
         margin-top: 20px;
     }
+    
+    th, td { padding: 15px; text-align: left; }
 
-    /* Эффект при наведении на строку */
-    tr:hover {
-        background-color: #1a1a1a !important;
-        transition: 0.3s;
-    }
-
-    /* Адаптивность для мобилок */
+    /* Мобильная адаптация */
     @media screen and (max-width: 600px) {
-        table {
-            display: block;
-            overflow-x: auto; /* Скролл таблицы вбок */
-        }
-        h1 { font-size: 24px; }
-        padding: 0 15px;
+        .main-container { padding: 15px; }
+        table { display: block; overflow-x: auto; }
     }
-
-    </style>
+</style>
 </head>
 <body>
 
