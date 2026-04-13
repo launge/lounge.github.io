@@ -5,6 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Проекты | Алихан</title>
     <style>
+        /* Кнопки навигации с эффектом подчеркивания */
+nav a {
+    color: #27ae60;
+    text-decoration: none;
+    margin-right: 15px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav a:hover {
+    color: #f1c40f; /* Меняет цвет на желтый при наведении */
+}
+
+/* Карточки услуг теперь "всплывают" */
+.card {
+    border: 1px solid #27ae60;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    background: #0a0a0a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавность */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Всплытие вверх */
+    box-shadow: 0 10px 20px rgba(39, 174, 96, 0.3); /* Зеленое свечение */
+    border-color: #f1c40f; /* Рамка становится желтой */
+}
+
+/* Оживляем таблицу */
+tr {
+    transition: background 0.2s;
+}
+
+tr:hover {
+    background-color: #111; /* Строка подсвечивается */
+}
+
+/* Кнопки скачивания теперь пульсируют при наведении */
+a[download], a[target="_blank"] {
+    display: inline-block;
+    transition: scale 0.2s ease;
+}
+
+a[download]:hover, a[target="_blank"]:hover {
+    scale: 1.1; /* Кнопка чуть увеличивается */
+    color: #f1c40f;
+}
+        
         body {
             background-color: #000;
             color: white;
