@@ -4,6 +4,36 @@
     <meta charset="UTF-8">
     <title>Моя первая страница</title>
     <style>
+		.terminal-window {
+    background-color: #0d0d0d;
+    border: 1px solid #27ae60;
+    border-radius: 6px;
+    padding: 15px;
+    font-family: 'Courier New', monospace;
+    box-shadow: 0 0 20px rgba(39, 174, 96, 0.1);
+    margin: 20px 0;
+    max-width: 600px;
+}
+
+.command-line::before {
+    content: "root@alikhan:~$ ";
+    color: #27ae60;
+}
+
+.terminal-text {
+    color: #fff;
+}
+
+.terminal-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.terminal-list li::before {
+    content: "[+] ";
+    color: #f1c40f; /* Желтый плюс */
+}
         /* Стили для всей страницы */
         body {
             background-color: #121212; /* Глубокий черный фон */
@@ -148,7 +178,7 @@
     <a href="index.html" style="color: #ffcc00; text-decoration: none; margin-right: 20px;">Главная</a>
     <a href="project.html" style="color: #ffcc00; text-decoration: none;">Проекты</a>
 </nav>
-        <h1>Привет, я Алихан</h1>
+        <h1 id="typing-text" style="color: #ffcc00; min-height: 1.2em;"></h1>
         <p>Я хочу научиться делать сайты.</p>
 
         <h3>Мой список инструментов</h3>
@@ -225,6 +255,22 @@ function sendFeedback() {
         document.getElementById('userName').value = "";
     }
 }
+	<script>
+    const text = "Привет, я Алихан — будущий специалист по кибербезопасности";
+    let i = 0;
+    const speed = 70; // Скорость печати в мс
+
+    function typeWriter() {
+        if (i < text.length) {
+            document.getElementById("typing-text").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+
+    // Запускаем эффект при загрузке страницы
+    window.addEventListener('load', typeWriter);
+</script>
 </script>
 <footer style="margin-top: 50px; padding: 30px; border-top: 1px solid #1a1a1a; text-align: center; color: #555;">
     <p style="margin-bottom: 10px;">&copy; 2026 Алихан Абдуллаев</p>
