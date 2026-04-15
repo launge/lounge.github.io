@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Проекты | Алихан</title>
     <style>
+.terminal-window {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: 0 0 15px rgba(39, 174, 96, 0.2);
+    margin-bottom: 30px;
+}
+
+.command-line::before {
+    content: "root@alikhan:~$";
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.terminal-text {
+    color: #00ff00;
+}
         /* Кнопки навигации с эффектом подчеркивания */
 nav a {
     color: #27ae60;
@@ -112,7 +131,7 @@ a[download]:hover, a[target="_blank"]:hover {
         <a href="projects.html">Проекты</a>
     </nav>
 
-    <h1>Привет, я Алихан и это мои проекты</h1>
+    <h1 id="typing-text"></h1>
     <p>Студент кибербезопасности. Разрабатываю софт и настраиваю защищенные системы.</p>
 
     <h2>Мои Услуги & Прайс</h2>
@@ -153,6 +172,17 @@ a[download]:hover, a[target="_blank"]:hover {
             alert("Файл " + name + " открывается. Удачи, Алихан!");
             return true;
         }
+        const text = "Привет я Алихан - будущий специалист"
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typing-text").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        window.onload = typeWriter;
     </script>
 </body>
 </html>
